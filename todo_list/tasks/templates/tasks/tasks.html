@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+    To do list
+{% endblock %}
+
+{% block content %}
+    <div class="card subject">
+        <div class="card-body">
+            <h1 class="card-title">To do list</h1> 
+        </div>
+    </div>
+    
+    <a class="btn button" href="{% url 'add_task' %}"><i class="fa-solid fa-plus"></i> New task</a>
+
+    {% if tasks %}
+        <ul class="list-group list-group-flush">
+            {% for task in tasks %}
+                <a href="{% url 'edit_task' task.id %}"><li class="btn list-card">{{task.name}}</li></a>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no tasks yet, please create a new one</p>
+    {% endif %}
+{% endblock %}

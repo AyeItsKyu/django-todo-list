@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Login page
+{% endblock %}
+
+{% block content %}
+<div class="login-wrapper">
+  <div class="card login-card">
+    <div class="card-body">
+      <form method="post">
+        <h2 class="card-title" style="color: white;">Login</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn login-button">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

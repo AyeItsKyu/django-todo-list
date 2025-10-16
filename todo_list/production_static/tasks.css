@@ -1,0 +1,96 @@
+body {
+    background-color:white;
+}
+
+.title {
+    color: white;
+}
+
+.nav-bar {
+    background-color:#06402B;
+    padding: 7.5px;
+    border-radius: 0%;
+}
+
+.subject {
+    background-color: lightseagreen;
+    width: 13rem;
+    height: 5rem;
+    margin: 10px;
+    color: white;
+    align-items: center;
+}
+
+.button {
+    margin: 10px;
+    color: white;
+    border-color: transparent;
+    background-color: #eba645;
+}
+
+.login-button, .login-button:hover {
+    margin-top: 10px;
+    color: white;
+    border-color: transparent;
+    background-color: #eba645;
+}
+
+.delete-button {
+    margin: 10px;
+    color: white;
+    border-color: transparent;
+    background-color: #f74b4be5;
+}
+
+.button:hover, .list-card:hover, .delete-button:hover {
+    margin: 10px;
+    color: white;
+    border-color: transparent;
+    background-color: lightseagreen;
+}
+
+.list-card {
+    margin: 10px;
+    color: white;
+    border-color: transparent;
+    background-color: antiquewhite;
+    background-color: #f74b4be5;
+}
+
+.form-card {
+    background-color: lightseagreen;
+}
+
+form {
+    margin:10px;
+}
+
+label {
+    color:white;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    width: 30rem;
+    height: 20rem;
+    border-radius: 8px;
+    background-color: #06402B;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

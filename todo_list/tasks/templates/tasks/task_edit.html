@@ -1,0 +1,70 @@
+{% extends "master.html" %}
+
+{% block title %}
+    {{mode}} task
+{% endblock %}
+
+{% block content %}
+
+    <div class="card subject">
+        <div class="card-body">
+            <h1 class="card-title">{{mode}} task</h1>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: start; align-items: center; gap: 10px;">
+        <a href="{% url 'tasks' %}" class="btn button"><i class="fa-solid fa-arrow-left"></i> Back to tasks</a> 
+        {% if mode == 'Edit' %}
+            <form action="{% url 'delete_task' task.id %}" >
+                {% csrf_token %}
+                <button type="submit" name="delete" class="btn delete-button">
+                    <i class="fa fa-trash"></i> Delete
+                </button>
+            </form>
+        {% endif %}
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="card" style="width: 30rem;">
+            <div class="card-body form-card">
+                <div class="mb-3">
+                    <label class="form-label" for="{{ form.name.id_for_label }}">Task name:</label>
+                    {{ form.name.errors }}
+                    {{ form.name }}
+                <div/>
+                <div class="mb-3">
+                    <label class="form-label" for="{{form.description.id_for_label}}">Description:</label>
+                    {{ form.description.errors }}
+                    {{ form.description }}
+                <div/> 
+                {% if mode == 'Edit' %}
+                    <div class="mb-3" style="margin-top: 8px;">
+                        <label class="form-label" for="{{form.is_completed.id_for_label}}">Completed:</label>
+                        {{ form.is_completed.errors }}
+                        {{ form.is_completed }}
+                    <div/>
+                    <div class="mb-3">
+                        <label class="form-label" for="{{form.complete_dt.id_for_label}}">Complete date:</label>
+                        {{ form.complete_dt.errors }}
+                        {{ form.complete_dt }}
+                    <div/>
+                {% endif %}
+            </div>
+        </div>
+
+        <button type="submit" name="save" class="btn button" style="margin-bottom: 0%;">
+            <i class="fa fa-floppy-disk"></i> Save
+        </button>    
+    </form>
+
+    <script>
+        $(document).ready(function(){
+            $('#complete_dt').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true, 
+                todayHighlight: true,
+            });
+        });
+    </script>
+{% endblock %}
