@@ -16,7 +16,9 @@
     {% if tasks %}
         <ul class="list-group list-group-flush">
             {% for task in tasks %}
-                <a href="{% url 'edit_task' task.id %}"><li class="btn list-card">{{task.name}}</li></a>
+                <li>
+                    <a class="btn list-card" style="color: white;" href="{% url 'edit_task' task.id %}">{{task.name}}</a>
+                </li>
             {% endfor %}
         </ul>
     {% else %}

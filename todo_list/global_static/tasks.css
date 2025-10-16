@@ -53,8 +53,8 @@ body {
     margin: 10px;
     color: white;
     border-color: transparent;
-    background-color: antiquewhite;
     background-color: #f74b4be5;
+    width: max-content;
 }
 
 .form-card {
